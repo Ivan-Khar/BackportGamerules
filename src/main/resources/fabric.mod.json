@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "aqupdblank",
+  "version": "${version}",
+
+  "name": "Blank mod",
+  "description": "There's nothing here",
+  "authors": [
+    "AqUpd!"
+  ],
+  "contact": {
+    "homepage": "https://aqupd.ru",
+    "sources": "https://github.com/AquUpd"
+  },
+
+  "license": "CC BY-NC 3.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.aqupd.aqupdblank.Main"
+    ]
+  },
+  "mixins": [
+    "aqupdblank.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  }
+}
