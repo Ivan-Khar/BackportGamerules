@@ -1,3 +1,3 @@
-# Fabric 1.17 blank mod
+# Fabric 1.19 blank mod
 
 That's it!

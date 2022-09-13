@@ -1,14 +1,16 @@
 package com.aqupd.aqupdblank;
 
 import net.fabricmc.api.ModInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import static com.aqupd.aqupdblank.utils.AqLogger.*;
 
 public class Main implements ModInitializer {
-    @Override
-    public void onInitialize() {
-        logInfo("Doors on Stairs initialized");
-		logWarn("just warning lol");
-		logError("YOOO ERROR!");
-    }
+
+  public static Logger LOGGER = LoggerFactory.getLogger("Aquatic blank mod");
+
+  @Override
+  public void onInitialize() {
+    LOGGER.info("helo");
+  }
 }
