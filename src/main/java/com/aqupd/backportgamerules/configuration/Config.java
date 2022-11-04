@@ -24,7 +24,7 @@ public class Config {
   private Field<Boolean> TNT_EXPLOSION_DROP_DECAY = new Field<>(false);
   private Field<Boolean> WATER_SOURCE_CONVERSION = new Field<>(true);
   private Field<Boolean> LAVA_SOURCE_CONVERSION = new Field<>(false);
-  private Field<Boolean> GLOBAL_SOUND_EVENTS = new Field<>(false);
+  private Field<Boolean> GLOBAL_SOUND_EVENTS = new Field<>(true);
 
   private final HashMap<String, Field> gamerules = new HashMap<>() {{
     put("snowAccumulationHeight", SNOW_ACCUMULATION_HEIGHT);
@@ -65,7 +65,6 @@ public class Config {
           if(value.isBoolean()) field.setValue(jE.getAsBoolean());
           if(value.isString()) field.setValue(jE.getAsString());
           if(value.isNumber()) field.setValue(jE.getAsInt());
-          LOGGER.info(key + ": " + field.getValue() + " " + jE);
         }
       });
       save();
