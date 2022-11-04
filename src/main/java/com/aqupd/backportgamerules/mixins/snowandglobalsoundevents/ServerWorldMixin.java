@@ -22,6 +22,8 @@ import static net.minecraft.block.SnowBlock.*;
 
 @Mixin(ServerWorld.class)
 public class ServerWorldMixin {
+  private Config cfg = Config.INSTANCE;
+
   //snowAccumulationHeight
   //Cancelling vanilla setBlockState()
   @Redirect(method = "tickChunk", at = @At(
@@ -39,7 +41,7 @@ public class ServerWorldMixin {
           shift = At.Shift.BEFORE))
   private void snowAccumulationHeight(WorldChunk chunk, int randomTickSpeed, CallbackInfo ci, ChunkPos chunkPos, boolean bl, int i, int j, Profiler profiler, BlockPos blockPos, BlockPos blockPos2, Biome biome) {
     ServerWorld serverWorld = ((ServerWorld)(Object)this);
-    int maxSnowLayers = Config.INSTANCE.getSnowAccumulationHeight();
+    int maxSnowLayers = (Integer) cfg.getSetting("snowAccumulationHeight").getValue();
     if (biome.canSetSnow(serverWorld, blockPos) && maxSnowLayers > 0) {
       BlockState blockState = serverWorld.getBlockState(blockPos);
       if (blockState.isOf(SNOW)) {
@@ -59,7 +61,7 @@ public class ServerWorldMixin {
       target = "Lnet/minecraft/server/PlayerManager;sendToAll(Lnet/minecraft/network/Packet;)V", value = "INVOKE"))
   private void globalSoundEventsDisable(int eventId, BlockPos pos, int data, CallbackInfo ci) {
     ServerWorld serverWorld = ((ServerWorld)(Object)this);
-    if(false) {
+    if((boolean) cfg.getSetting("globalSoundEvents").getValue()) {
       serverWorld.getServer().getPlayerManager().sendToAll(new WorldEventS2CPacket(eventId, pos, data, true));
     } else {
       serverWorld.syncWorldEvent(null, eventId, pos, data);

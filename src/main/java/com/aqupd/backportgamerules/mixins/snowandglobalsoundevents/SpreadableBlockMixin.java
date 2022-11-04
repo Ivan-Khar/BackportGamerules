@@ -19,7 +19,7 @@ public class SpreadableBlockMixin {
   @Inject(method = "canSurvive", cancellable = true, locals = LocalCapture.CAPTURE_FAILSOFT, at = @At(
       target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z", value = "INVOKE", ordinal = 0))
   private static void checkIfSnowLayersAboveGrass(BlockState state, WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir, BlockPos blockPos, BlockState blockState) {
-    boolean snowLayersKillGrass = Config.INSTANCE.isSnowLayersKillGrass();
+    boolean snowLayersKillGrass = (boolean) Config.INSTANCE.getSetting("snowLayersKillGrass").getValue();
     if(!snowLayersKillGrass && blockState.isOf(Blocks.SNOW)) {
       cir.setReturnValue(true);
     }
