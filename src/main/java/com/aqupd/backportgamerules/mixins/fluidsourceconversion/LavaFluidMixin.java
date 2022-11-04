@@ -1,4 +1,4 @@
-package com.aqupd.backportgamerules.mixins.fluidSourceConversion;
+package com.aqupd.backportgamerules.mixins.fluidsourceconversion;
 
 import net.minecraft.fluid.LavaFluid;
 import org.spongepowered.asm.mixin.Mixin;

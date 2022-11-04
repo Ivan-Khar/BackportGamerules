@@ -1,4 +1,4 @@
-package com.aqupd.backportgamerules.mixins.snowAndGlobalSoundEvents;
+package com.aqupd.backportgamerules.mixins.snowandglobalsoundevents;
 
 import com.aqupd.backportgamerules.configuration.Config;
 import net.minecraft.block.BlockState;
