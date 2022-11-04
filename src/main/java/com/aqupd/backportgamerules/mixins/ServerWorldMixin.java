@@ -2,6 +2,7 @@ package com.aqupd.backportgamerules.mixins;
 
 import com.aqupd.backportgamerules.configuration.Config;
 import net.minecraft.block.BlockState;
+import net.minecraft.network.packet.s2c.play.WorldEventS2CPacket;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -28,6 +29,7 @@ public class ServerWorldMixin {
           ordinal = 0))
   private boolean cancelCanSetSnow(Biome instance, WorldView world, BlockPos pos) { return false; }
 
+  //Changing snow layer placement logic (Definitely not 1.20 yarn code)
   @Inject(method = "tickChunk", locals = LocalCapture.CAPTURE_FAILSOFT, at = @At(
           target = "Lnet/minecraft/world/biome/Biome;canSetSnow(Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z",
           value = "INVOKE",
@@ -47,5 +49,18 @@ public class ServerWorldMixin {
         serverWorld.setBlockState(blockPos, SNOW.getDefaultState());
       }
     }
+  }
+
+  //Adding own code and after that cancelling vanilla one
+  @Inject(method = "syncGlobalEvent", cancellable = true, at = @At(
+      target = "Lnet/minecraft/server/PlayerManager;sendToAll(Lnet/minecraft/network/Packet;)V", value = "INVOKE"))
+  private void globalSoundEventsDisable(int eventId, BlockPos pos, int data, CallbackInfo ci) {
+    ServerWorld serverWorld = ((ServerWorld)(Object)this);
+    if(false) {
+      serverWorld.getServer().getPlayerManager().sendToAll(new WorldEventS2CPacket(eventId, pos, data, true));
+    } else {
+      serverWorld.syncWorldEvent(null, eventId, pos, data);
+    }
+    ci.cancel();
   }
 }
