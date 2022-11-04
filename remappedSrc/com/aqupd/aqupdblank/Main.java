@@ -1,4 +1,4 @@
-package com.aqupd.aqupdblank;
+package com.aqupd.backportgamerules;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;

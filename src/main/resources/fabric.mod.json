@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "aqupdblank",
+  "id": "backportgamerules",
   "version": "${version}",
 
   "name": "Blank mod",
@@ -18,11 +18,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.aqupd.aqupdblank.Main"
+      "com.aqupd.backportgamerules.Main"
     ]
   },
   "mixins": [
-    "aqupdblank.mixins.json"
+    "backportgamerules.mixins.json"
   ],
 
   "depends": {

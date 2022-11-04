@@ -1,7 +1,7 @@
-package com.aqupd.aqupdblank;
+package com.aqupd.backportgamerules;
 
-import com.aqupd.aqupdblank.configuration.Config;
-import com.aqupd.aqupdblank.command.Commands;
+import com.aqupd.backportgamerules.configuration.Config;
+import com.aqupd.backportgamerules.command.Commands;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import org.slf4j.Logger;

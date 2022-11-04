@@ -1,4 +1,4 @@
-package com.aqupd.aqupdblank.configuration;
+package com.aqupd.backportgamerules.configuration;
 
 import com.google.gson.*;
 import org.apache.logging.log4j.LogManager;

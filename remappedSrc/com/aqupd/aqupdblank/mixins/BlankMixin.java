@@ -1,4 +1,4 @@
-package com.aqupd.aqupdblank.mixins;
+package com.aqupd.backportgamerules.mixins;
 
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;

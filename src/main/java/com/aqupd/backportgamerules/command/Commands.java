@@ -1,4 +1,4 @@
-package com.aqupd.aqupdblank.command;
+package com.aqupd.backportgamerules.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;

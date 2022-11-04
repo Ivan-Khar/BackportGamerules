@@ -1,6 +1,6 @@
-package com.aqupd.aqupdblank.mixins;
+package com.aqupd.backportgamerules.mixins;
 
-import com.aqupd.aqupdblank.configuration.Config;
+import com.aqupd.backportgamerules.configuration.Config;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SpreadableBlock;

@@ -1,4 +1,4 @@
-package com.aqupd.aqupdblank.mixins;
+package com.aqupd.backportgamerules.mixins;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
