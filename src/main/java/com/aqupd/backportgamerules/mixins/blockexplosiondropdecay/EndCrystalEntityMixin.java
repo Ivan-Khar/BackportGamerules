@@ -9,12 +9,12 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(EndCrystalEntity.class)
 public class EndCrystalEntityMixin {
   //blockExplosionDropDecay
-  //changing default Explosion type to BREAK
+  //changing default Explosion type
   @ModifyArg(method = "damage", index = 5, at = @At(
       target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/world/explosion/Explosion$DestructionType;)Lnet/minecraft/world/explosion/Explosion;",
       value = "INVOKE", ordinal = 0))
   private Explosion.DestructionType changeDestructionType(Explosion.DestructionType destructionType) {
-    if(true) return Explosion.DestructionType.BREAK;
-    return destructionType;
+    if(true) return destructionType; //DESTROY
+    return Explosion.DestructionType.BREAK; //BREAK
   }
 }

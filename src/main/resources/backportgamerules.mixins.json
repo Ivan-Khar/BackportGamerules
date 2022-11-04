@@ -9,12 +9,15 @@
     "blockexplosiondropdecay.RespawnAnchorBlockMixin",
     "fluidsourceconversion.LavaFluidMixin",
     "fluidsourceconversion.WaterFluidMixin",
+    "mobexplosiondropdecay.CreeperEntityMixin",
     "mobexplosiondropdecay.FireballEntityMixin",
     "mobexplosiondropdecay.WitherEntityMixin",
     "mobexplosiondropdecay.WitherSkullEntityMixin",
     "snowandglobalsoundevents.BiomeMixin",
     "snowandglobalsoundevents.ServerWorldMixin",
-    "snowandglobalsoundevents.SpreadableBlockMixin"
+    "snowandglobalsoundevents.SpreadableBlockMixin",
+    "tntexplosiondropdecay.TntEntityMixin",
+    "tntexplosiondropdecay.TntMinecartEntityMixin"
   ],
   "client": [],
   "server": [],
