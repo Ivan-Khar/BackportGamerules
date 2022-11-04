@@ -1,4 +1,4 @@
-package com.aqupd.backportgamerules.mixins;
+package com.aqupd.backportgamerules.mixins.blockExplosionDropDecay;
 
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.world.explosion.Explosion;

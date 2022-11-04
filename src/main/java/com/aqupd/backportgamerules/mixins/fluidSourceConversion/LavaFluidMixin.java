@@ -1,15 +1,15 @@
-package com.aqupd.backportgamerules.mixins;
+package com.aqupd.backportgamerules.mixins.fluidSourceConversion;
 
-import net.minecraft.fluid.WaterFluid;
+import net.minecraft.fluid.LavaFluid;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(WaterFluid.class)
-public class WaterFluidMixin {
-  //waterSourceConversion
-  //disabling water infinite source
+@Mixin(LavaFluid.class)
+public class LavaFluidMixin {
+  //lavaSourceConversion
+  //making lava infinite source
   @Inject(method = "isInfinite", cancellable = true, at = @At(value = "HEAD"))
-  private void test(CallbackInfoReturnable<Boolean> cir) { cir.setReturnValue(false); }
+  private void test(CallbackInfoReturnable<Boolean> cir) { cir.setReturnValue(true); }
 }
