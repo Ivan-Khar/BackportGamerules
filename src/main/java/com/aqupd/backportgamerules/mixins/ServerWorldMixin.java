@@ -22,6 +22,7 @@ import static net.minecraft.block.SnowBlock.*;
 
 @Mixin(ServerWorld.class)
 public class ServerWorldMixin {
+  //snowAccumulationHeight
   //Cancelling vanilla setBlockState()
   @Redirect(method = "tickChunk", at = @At(
           target = "Lnet/minecraft/world/biome/Biome;canSetSnow(Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z",
@@ -29,6 +30,7 @@ public class ServerWorldMixin {
           ordinal = 0))
   private boolean cancelCanSetSnow(Biome instance, WorldView world, BlockPos pos) { return false; }
 
+  //snowAccumulationHeight
   //Changing snow layer placement logic (Definitely not 1.20 yarn code)
   @Inject(method = "tickChunk", locals = LocalCapture.CAPTURE_FAILSOFT, at = @At(
           target = "Lnet/minecraft/world/biome/Biome;canSetSnow(Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z",
@@ -51,6 +53,7 @@ public class ServerWorldMixin {
     }
   }
 
+  //globalWorldEvents
   //Adding own code and after that cancelling vanilla one
   @Inject(method = "syncGlobalEvent", cancellable = true, at = @At(
       target = "Lnet/minecraft/server/PlayerManager;sendToAll(Lnet/minecraft/network/Packet;)V", value = "INVOKE"))

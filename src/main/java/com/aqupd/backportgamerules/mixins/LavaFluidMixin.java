@@ -8,6 +8,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LavaFluid.class)
 public class LavaFluidMixin {
+  //lavaSourceConversion
+  //making lava infinite source
   @Inject(method = "isInfinite", cancellable = true, at = @At(value = "HEAD"))
   private void test(CallbackInfoReturnable<Boolean> cir) { cir.setReturnValue(true); }
 }
