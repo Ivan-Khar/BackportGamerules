@@ -38,8 +38,8 @@ public class Config {
       JsonObject jo = gson.fromJson(new FileReader(confFile), JsonObject.class);
       JsonElement jE;
 
-      if ((jE = jo.get("enable")) != null) SNOW_ACCUMULATION_HEIGHT = jE.getAsInt();
-      if ((jE = jo.get("debug")) != null) SNOW_LAYERS_KILL_GRASS = jE.getAsBoolean();
+      if ((jE = jo.get("snow_accumulation_height")) != null) SNOW_ACCUMULATION_HEIGHT = jE.getAsInt();
+      if ((jE = jo.get("snow_layers_kill_grass")) != null) SNOW_LAYERS_KILL_GRASS = jE.getAsBoolean();
       save();
     } catch (FileNotFoundException ex) {
       LOGGER.trace("Couldn't load configuration file", ex);
@@ -51,8 +51,8 @@ public class Config {
       if (!confFile.exists()) { confFile.getParentFile().mkdirs(); confFile.createNewFile(); }
       if (confFile.exists()) {
         JsonObject jo = new JsonObject();
-        jo.add("enable", new JsonPrimitive(SNOW_ACCUMULATION_HEIGHT));
-        jo.add("debug", new JsonPrimitive(SNOW_LAYERS_KILL_GRASS));
+        jo.add("snow_accumulation_height", new JsonPrimitive(SNOW_ACCUMULATION_HEIGHT));
+        jo.add("snow_layers_kill_grass", new JsonPrimitive(SNOW_LAYERS_KILL_GRASS));
 
         PrintWriter printwriter = new PrintWriter(new FileWriter(confFile));
         printwriter.print(gson.toJson(jo));
