@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "id": "backportgamerules",
   "version": "${version}",
-  "name": "Blank mod",
-  "description": "There's nothing here",
+  "name": "Backport Gamerules",
+  "description": "Backporting 1.20 gamerules to the older versions",
   "authors": [
     "AqUpd!"
   ],
   "contact": {
-    "homepage": "https://aqupd.ru",
-    "sources": "https://github.com/AquUpd"
+    "homepage": "https://theaq.one",
+    "sources": "https://github.com/Ivan-Khar"
   },
   "license": "CC BY-NC 3.0",
   "environment": "*",
