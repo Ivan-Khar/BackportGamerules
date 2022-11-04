@@ -3,9 +3,9 @@
 Yup. Backporting 1.20 gamerules to the older versions(probably only 1.18-1.19)
 
 ## Progress:
-- [ ] blockExplosionDropDecay
-- [ ] mobExplosionDropDecay
-- [ ] tntExplosionDropDecay
+- [x] blockExplosionDropDecay // Bed, Respawn Anchor, End Crystal //No config yet
+- [ ] mobExplosionDropDecay // Creeper, Fireball, Wither, Wither skull
+- [ ] tntExplosionDropDecay // TNT, TNT minecart
 - [x] snowAccumulationHeight (snowLayersKillGrass was added for cosmetic purposes)
 - [x] waterSourceConversion //No config yet
 - [x] lavaSourceConversion //No config yet
