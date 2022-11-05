@@ -1,6 +1,6 @@
 # Backported Gamerules
 
-Yup. Backporting 1.20 gamerules to the older versions(probably only 1.18-1.19)
+Yup. Backporting 1.19.3-1.20 gamerules to the older versions(probably only 1.18-1.19)
 
 ## Progress:
 - [x] blockExplosionDropDecay // Bed, Respawn Anchor, End Crystal
