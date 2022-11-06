@@ -76,18 +76,20 @@ public class Config {
   public void save() {
     try {
       if (!confFile.exists()) { confFile.getParentFile().mkdirs(); confFile.createNewFile(); }
-      JsonObject jo = new JsonObject();
-      gamerules.keySet().forEach(key -> {
-        Object value = gamerules.get(key).getValue();
-        if(value instanceof Boolean) jo.add(key, new JsonPrimitive((boolean) value));
-        else if(value instanceof String) jo.add(key, new JsonPrimitive((String) value));
-        else if(value instanceof Number) jo.add(key, new JsonPrimitive((Number) value));
-        else jo.add(key, null);
-      });
+      if (confFile.exists()) {
+        JsonObject jo = new JsonObject();
+        gamerules.keySet().forEach(key -> {
+          Object value = gamerules.get(key).getValue();
+          if(value instanceof Boolean) jo.add(key, new JsonPrimitive((boolean) value));
+          else if(value instanceof String) jo.add(key, new JsonPrimitive((String) value));
+          else if(value instanceof Number) jo.add(key, new JsonPrimitive((Number) value));
+          else jo.add(key, null);
+        });
 
-      PrintWriter printwriter = new PrintWriter(new FileWriter(confFile));
-      printwriter.print(gson.toJson(jo));
-      printwriter.close();
+        PrintWriter printwriter = new PrintWriter(new FileWriter(confFile));
+        printwriter.print(gson.toJson(jo));
+        printwriter.close();
+      }
     } catch (IOException ex) {
       LOGGER.trace("Couldn't save configuration file", ex);
     }
