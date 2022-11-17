@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(RespawnAnchorBlock.class)
-public class RespawnAnchorBlockMixin {
+public abstract class RespawnAnchorBlockMixin {
   //blockExplosionDropDecay
   //changing default Explosion type
   @ModifyArg(method = "explode", index = 8, at = @At(

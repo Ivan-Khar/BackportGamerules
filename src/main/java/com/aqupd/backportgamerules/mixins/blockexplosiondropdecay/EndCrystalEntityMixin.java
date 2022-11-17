@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(EndCrystalEntity.class)
-public class EndCrystalEntityMixin {
+public abstract class EndCrystalEntityMixin {
   //blockExplosionDropDecay
   //changing default Explosion type
   @ModifyArg(method = "damage", index = 5, at = @At(

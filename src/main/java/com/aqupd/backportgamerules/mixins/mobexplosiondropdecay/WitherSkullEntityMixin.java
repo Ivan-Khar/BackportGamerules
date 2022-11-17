@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(WitherSkullEntity.class)
-public class WitherSkullEntityMixin {
+public abstract class WitherSkullEntityMixin {
   //mobExplosionDropDecay
   //changing default Explosion type to BREAK
   @ModifyArg(method = "onCollision", index = 6, at = @At(

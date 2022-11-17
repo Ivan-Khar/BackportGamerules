@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(WaterFluid.class)
-public class WaterFluidMixin {
+public abstract class WaterFluidMixin {
   //waterSourceConversion
   //disabling water infinite source
   @Inject(method = "isInfinite", cancellable = true, at = @At(value = "HEAD"))

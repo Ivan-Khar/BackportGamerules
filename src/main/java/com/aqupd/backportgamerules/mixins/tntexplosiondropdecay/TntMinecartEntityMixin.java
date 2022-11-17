@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(TntMinecartEntity.class)
-public class TntMinecartEntityMixin {
+public abstract class TntMinecartEntityMixin {
   //tntExplosionDropDecay
   //changing default Explosion type
   @ModifyArg(method = "explode", index = 5, at = @At(

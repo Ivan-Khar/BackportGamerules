@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(WitherEntity.class)
-public class WitherEntityMixin {
+public abstract class WitherEntityMixin {
   //mobExplosionDropDecay
   //changing default Explosion type to BREAK
   @ModifyArg(method = "mobTick", index = 6, at = @At(

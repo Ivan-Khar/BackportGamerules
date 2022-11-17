@@ -21,7 +21,7 @@ import static net.minecraft.block.Blocks.*;
 import static net.minecraft.block.SnowBlock.*;
 
 @Mixin(ServerWorld.class)
-public class ServerWorldMixin {
+public abstract class ServerWorldMixin {
   private Config cfg = Config.INSTANCE;
 
   //snowAccumulationHeight

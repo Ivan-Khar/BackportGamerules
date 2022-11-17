@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(CreeperEntity.class)
-public class CreeperEntityMixin {
+public abstract class CreeperEntityMixin {
   //mobExplosionDropDecay
   //changing default Explosion type
   @ModifyArg(method = "explode", index = 5, at = @At(

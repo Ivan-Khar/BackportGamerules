@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(FireballEntity.class)
-public class FireballEntityMixin {
+public abstract class FireballEntityMixin {
   //mobExplosionDropDecay
   //changing default Explosion type to BREAK
   @ModifyArg(method = "onCollision", index = 6, at = @At(

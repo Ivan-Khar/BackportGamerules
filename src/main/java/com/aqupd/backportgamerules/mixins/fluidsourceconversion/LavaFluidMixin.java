@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LavaFluid.class)
-public class LavaFluidMixin {
+public abstract class LavaFluidMixin {
   //lavaSourceConversion
   //making lava infinite source
   @Inject(method = "isInfinite", cancellable = true, at = @At(value = "HEAD"))

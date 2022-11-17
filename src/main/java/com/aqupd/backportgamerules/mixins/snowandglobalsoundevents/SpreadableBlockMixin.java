@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(SpreadableBlock.class)
-public class SpreadableBlockMixin {
+public abstract class SpreadableBlockMixin {
   //snowLayersKillGrass
   //making it so >1 snow layers is not destroying grass under it
   @Inject(method = "canSurvive", cancellable = true, locals = LocalCapture.CAPTURE_FAILSOFT, at = @At(

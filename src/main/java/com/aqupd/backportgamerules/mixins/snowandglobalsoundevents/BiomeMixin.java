@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(Biome.class)
-public class BiomeMixin {
+public abstract class BiomeMixin {
   //snowAccumulationHeight
   //making it so snow can be placed in snow when raining
   @Redirect(method = "canSetSnow", at = @At(
